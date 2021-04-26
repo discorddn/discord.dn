@@ -36,13 +36,31 @@ export default class Client {
             const socket = new WebSocket("wss://gateway.discord.gg/gateway/bot");
             let isConnected: boolean = false;
 
-            socket.addEventListener('open', function (event) {
-                isConnected = true;
-                socket.send('Hello Server!');
-            });
-
-            socket.addEventListener('message', function (event) {
-                console.log('Message from server ', event.data);
+            socket.addEventListener("message", function (event) {
+                const message = JSON.parse(event.data);
+                /*
+                0	Dispatch	Receive	An event was dispatched.
+                1	Heartbeat	Send/Receive	Fired periodically by the client to keep the connection alive.
+                2	Identify	Send	Starts a new session during the initial handshake.
+                3	Presence Update	Send	Update the client's presence.
+                4	Voice State Update	Send	Used to join/leave or move between voice channels.
+                6	Resume	Send	Resume a previous session that was disconnected.
+                7	Reconnect	Receive	You should attempt to reconnect and resume immediately.
+                8	Request Guild Members	Send	Request information about offline guild members in a large guild.
+                9	Invalid Session	Receive	The session has been invalidated. You should reconnect and identify/resume accordingly.
+                10	Hello	Receive	Sent immediately after connecting, contains the heartbeat_interval to use.
+                11	Heartbeat ACK	Receive	Sent in response to receiving a heartbeat to acknowledge that it has been received.
+                 */
+                console.log(message.op);
+                if(message.op === 10 || message.op === 11) {
+                    // Hello - connected
+                    isConnected = true;
+                    console.log("next ack in: " + message.d.heartbeat_interval)
+                    setTimeout(() => {
+                        console.log("acking");
+                        socket.send(JSON.stringify({ "op": 1, "d": null }));
+                    }, parseInt(message.d.heartbeat_interval))
+                }
             });
             res(isConnected);
         })
