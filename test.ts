@@ -2,4 +2,4 @@ import Client from "./src/structures/Client.ts";
 
 const client = new Client({});
 
-client.login("ODMxMDkyMTIzNTQ5MDQwNjkw.YHQM2w.Ch-eegG_eLahicN_8Wt6OJybc04").then(r => console.log(r));
+client.login("ODM2MjY0MDQxODk4MDQ5NTM2.YIbdlA.54xiah6qoI2s7RwUMwpT_FLHuLk").then(r => console.log(r));
