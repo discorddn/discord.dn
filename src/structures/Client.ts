@@ -1,5 +1,5 @@
 import { ClientOptions } from "../../lib/util/interfaces.ts";
-import { Websocket } from "../websockets/Websocket.ts";
+import { Websocket } from "../websocket/Websocket.ts";
 
 /**
  * Starting point of any bot.
@@ -33,7 +33,6 @@ export default class Client {
         return new Promise((res, rej) => {
             if (!token || !this.token) throw new Error('INVALID_TOKEN');
             this.token = token.replace(/^(Bot|Bearer)\s*/i, '');
-            Websocket.connect();
         })
     }
 };
