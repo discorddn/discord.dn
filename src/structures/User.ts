@@ -1,3 +1,8 @@
+export interface AvatarUrlOptions {
+    format: "png" | "jpg" | "webp" | "gif"
+    size?: 32 | 64 | 128 | 256 | 512 | 1024 | 2048 | 4096
+}
+
 export default class User {
     readonly id: string;
     readonly username: string;
@@ -24,8 +29,8 @@ export default class User {
         return `${this.username}#${this.tag}`
     }
     
-    public get avatarUrl(): string {
-        return `https://cdn.discordapp.com/avatars/${this.id}/${this.avatar}`
+    public avatarUrl(options: AvatarUrlOptions): string {
+        return `https://cdn.discordapp.com/${this.id}/${this.avatar}.${options.format || "png"}` + options.size ? `size=${options.size}` : ""
     }
 
     public createdAt(): number {
