@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "inlineSourceMap": true,
+        "isolatedModules": true,
+        "module": "esnext",
+        "strict": true,
+        "target": "esnext",
+        "useDefineForClassFields": true
+    }
+}
