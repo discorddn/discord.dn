@@ -1,8 +1,5 @@
-// Test File
-(async () => { 
-    const conn = new WebSocket("wss://gateway.discord.gg/gateway/bot");
-    conn.onopen = async () => {
-        const sendResponse = conn.send("hi discord");
-        console.log(sendResponse);
-    }
-})();
+import Client from "./src/structures/Client.ts";
+
+const client = new Client({});
+
+client.login("ODMxMDkyMTIzNTQ5MDQwNjkw.YHQM2w.Ch-eegG_eLahicN_8Wt6OJybc04").then(r => console.log(r));
