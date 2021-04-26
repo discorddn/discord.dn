@@ -1,6 +1,8 @@
-// Testing file as if it was a module
-import { Client } from "./src/index.ts";
-
-const client = new Client();
-
-client.login("TOKEN");
+// Test File
+(async () => { 
+    const conn = new WebSocket("wss://gateway.discord.gg/gateway/bot");
+    conn.onopen = async () => {
+        const sendResponse = conn.send("hi discord");
+        console.log(sendResponse);
+    }
+})();
