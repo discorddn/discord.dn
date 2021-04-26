@@ -51,23 +51,22 @@ export default class Client {
                 10	Hello	Receive	Sent immediately after connecting, contains the heartbeat_interval to use.
                 11	Heartbeat ACK	Receive	Sent in response to receiving a heartbeat to acknowledge that it has been received.
                  */
-                if(message.op === 1) {
+                if(message.op === 0) {
+                    // Heartbeat - respond if code online
+                    console.log("Event > ", message.d);
+                } else if(message.op === 1) {
                     // Heartbeat - respond if code online
                     socket.send(JSON.stringify({ "op": 1, "d": null }));
                 } else if(message.op === 10) {
                     // Hello - connected
-                    isConnected = true;
-                    socket.send(JSON.stringify(
-                        {
-                            "op": 2, "d": { token: token, intents: 513, properties: { $os: "linux", $browser: "my_library", $device: "my_library" } }}
-                    ))
+                    socket.send(JSON.stringify({ "op": 2, "d": { token: token, intents: 513, properties: { $os: "linux", $browser: "my_library", $device: "my_library" } }})) // Boot up bot
+                    res(true);
                     setInterval(() => {
                         console.log("Acking Discord API back.");
                         socket.send(JSON.stringify({ "op": 1, "d": null }));
                     }, parseInt(message.d.heartbeat_interval))
                 }
             });
-            res(isConnected);
         })
     }
 };
