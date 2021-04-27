@@ -7,4 +7,4 @@ client.registerEvent("MESSAGE_CREATE", async (message: any) => {
 
 });
 
-client.login("ODM2MjY0MDQxODk4MDQ5NTM2.YIbdlA.54xiah6qoI2s7RwUMwpT_FLHuLk").then(state => console.log("Login state ", state));
+client.login("ODM2MjY0MDQxODk4MDQ5NTM2.YIbdlA.54xiah6qoI2s7RwUMwpT_FLHuLk").then(state => console.log("Login state", state));

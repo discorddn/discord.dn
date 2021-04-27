@@ -1,5 +1,4 @@
 import { Client } from "../structures/Client.ts";
-import { StandardWebSocketClient, WebSocketClient } from "https://deno.land/x/websocket@v0.1.1/mod.ts";
 import EventOptions from "../../lib/interfaces/EventOptions.ts";
 
 export class Websocket {
@@ -11,21 +10,22 @@ export class Websocket {
 
 	async connect(token: string) {
 		return new Promise(async (resolve, reject) => {
-			const socket: WebSocketClient = new StandardWebSocketClient("wss://gateway.discord.gg/gateway/bot");
 
-			socket.on('message', (event) => {
+			const socket = new WebSocket("wss://gateway.discord.gg/gateway/bot");
+
+			socket.addEventListener('message', event => {
 				const message = JSON.parse(event.data);
-				resolve(console.log(message));
 				if (message.op == 0) {
 					const event = this.client.events.find((e: EventOptions) => e.eventName == message.t);
 					if (!event) return;
-					if (typeof event.callback != 'function') throw new TypeError(`Callback for event ${event.eventName} isn't a valid function.`);
+					if (typeof event.callback != "function") throw new TypeError(`Callback for event ${event.eventName} isn't a valid function.`);
 					event.callback(message.d);
 				} else if (message.op == 1) {
 					socket.send(JSON.stringify({ "op": 1, "d": null }));
 				} else if (message.op == 10) {
 					socket.send(JSON.stringify({
-						"op": 2, "d": {
+						"op": 2,
+						"d": {
 							token: token,
 							intents: 513,
 							properties: {
