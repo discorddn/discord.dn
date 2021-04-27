@@ -3,8 +3,3 @@ export interface ClientOptions {
     disableEveryone?: boolean;
     disableHere?: boolean;
 }
-
-export interface EventOptions {
-    eventName: string;
-    callback: Function;
-}
