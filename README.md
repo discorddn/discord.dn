@@ -1,4 +1,7 @@
-<img src="discord.dn.png" height="150" width="150"> <h1>Discord.dn</h1>
+<div align="center">
+  <img src="discord.dn.png" height="200" width="200">
+  <h1>Discord.dn</h1>
+</div>
 
 **Discord.DN** is an epic **Discord API** wrapper made for **Deno.**
 
