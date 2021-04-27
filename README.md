@@ -1,6 +1,5 @@
-![Discord.DN Logo](./discord.dn.png)
+<img src="discord.dn.png" height="150" width="150"> <h1>Discord.dn</h1>
 
-# Discord.DN
 **Discord.DN** is an epic **Discord API** wrapper made for **Deno.**
 
 * It is good.
