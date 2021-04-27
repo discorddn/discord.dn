@@ -1,4 +1,6 @@
-import { ClientOptions, EventOptions } from "../../lib/util/interfaces.ts";
+import ClientOptions from "../../lib/interfaces/ClientOptions.ts";
+import EventOptions from "../../lib/interfaces/EventOptions.ts";
+import APIManager from "../util/APIManager.ts";
 import { Websocket } from "../websocket/Websocket.ts";
 
 /**
@@ -10,6 +12,7 @@ export class Client {
 	token: string | undefined;
 	socket: Websocket;
 	events: Array<EventOptions>;
+	api: APIManager;
 	/**
 	 * Options for the bot.
 	 * @param {ClientOptions}
@@ -24,10 +27,11 @@ export class Client {
 		this.token = options.token;
 		this.disableEveryone = !!options.disableEveryone;
 		this.disableHere = !!options.disableHere;
-		
+
 		// Private
 		this.socket = new Websocket(this);
 		this.events = [];
+		this.api = new APIManager(this);
 	}
 
 	/**
@@ -39,10 +43,8 @@ export class Client {
 		return new Promise(async (res, rej) => {
 			if (!token || !token.length) throw new Error("INVALID_TOKEN");
 			this.token = token.replace(/^(Bot|Bearer)\s*/i, "");
-			let isConnected: boolean = false;
 			// @ts-expect-error 2322
-			const socketResult: boolean = await this.socket.connect(token);
-			res({ websocketConnected: socketResult, token: token });
+			const socketResult: boolean = this.socket.connect(token).then(() => res({ websocketConnected: true, token: token })).catch(err => rej({ websocketConnected: false, error: err }));
 		})
 	}
 
