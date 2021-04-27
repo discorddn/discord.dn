@@ -16,9 +16,8 @@ export class Websocket {
         return new Promise(async (res, rej) => {
             const socket = new WebSocket("wss://gateway.discord.gg/gateway/bot");
 
-			socket.addEventListener("message", function (event) {
+			socket.addEventListener("message", event => {
 				const message = JSON.parse(event.data);
-				
 				if (message.op === 0) {
 					// Event - receive events
 					// switch (message.t) {
