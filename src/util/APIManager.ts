@@ -1,10 +1,5 @@
 import { Client } from "../structures/Client.ts";
-
-interface APIParameters {
-	headers?: Array<any>;
-
-}
-
+import APIParameters from "../../lib/interfaces/APIParameters.ts"
 export default class APIManager {
 	private DISCORD_API_BASE: string = "https://discord.com/api/v8";
 
@@ -14,9 +9,8 @@ export default class APIManager {
 		this.client = client;
 	}
 
-	get(url: string, params: APIParameters) {
+	get(url: string, params: APIParameters = {}) {
 		return new Promise(async (res, rej) => {
-			// @ts-ignore
 			fetch(this.DISCORD_API_BASE + url, { method: "GET", headers: { 'Content-Type': "application/json", 'Authorization': "Bot " + this.client.token } })
 				.then(d => d.json())
 				.then(response => res(response))
@@ -27,6 +21,33 @@ export default class APIManager {
 	post(url: string, body: object, params?: APIParameters) {
 		return new Promise(async (res, rej) => {
 			fetch(this.DISCORD_API_BASE + url, { method: "POST", body: JSON.stringify(body), headers: { 'Content-Type': "application/json", 'Authorization': "Bot " + this.client.token } })
+				.then(d => d.json())
+				.then(response => res(response))
+				.catch(err => rej);
+		});
+	}
+
+	delete(url: string, body: object, params?: APIParameters) {
+		return new Promise(async (res, rej) => {
+			fetch(this.DISCORD_API_BASE + url, { method: "DELETE", body: JSON.stringify(body), headers: { 'Content-Type': "application/json", 'Authorization': "Bot " + this.client.token } })
+				.then(d => d.json())
+				.then(response => res(response))
+				.catch(err => rej);
+		});
+	}
+
+	patch(url: string, body: object, params?: APIParameters) {
+		return new Promise(async (res, rej) => {
+			fetch(this.DISCORD_API_BASE + url, { method: "PATCH", body: JSON.stringify(body), headers: { 'Content-Type': "application/json", 'Authorization': "Bot " + this.client.token } })
+				.then(d => d.json())
+				.then(response => res(response))
+				.catch(err => rej);
+		});
+	}
+
+	put(url: string, body: object, params?: APIParameters) {
+		return new Promise(async (res, rej) => {
+			fetch(this.DISCORD_API_BASE + url, { method: "PUT", body: JSON.stringify(body), headers: { 'Content-Type': "application/json", 'Authorization': "Bot " + this.client.token } })
 				.then(d => d.json())
 				.then(response => res(response))
 				.catch(err => rej);

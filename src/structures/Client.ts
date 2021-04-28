@@ -22,7 +22,7 @@ export class Client {
 	 *     disableHere: true
 	 * });
 	 */
-	constructor(options: ClientOptions) {
+	constructor(options: ClientOptions={}) {
 		// User defined
 		this.token = options.token;
 		this.disableEveryone = !!options.disableEveryone;
