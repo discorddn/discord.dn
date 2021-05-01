@@ -12,7 +12,7 @@ export class Websocket {
 	async connect(token: string) {
 		return new Promise(async (resolve, reject) => {
 
-			const socket = new WebSocket("wss://gateway.discord.gg/gateway/bot");
+			const socket = new WebSocket("wss://gateway.discord.gg/gateway/bot?v=9&encoding=json");
 
 			socket.addEventListener('message', event => {
 				const message = JSON.parse(event.data);
