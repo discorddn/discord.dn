@@ -60,8 +60,7 @@ export default class Channel {
         this.threadMember = options.threadMember || null
     }
 
-    public setChannelName(name: string) {
-        if (![0, 2, 3, 4, 5, 6, 13].includes(this.type)) throw TypeError("Channel does not allow name change")
+    public setName(name: string) {
         if (!(name.length >= 2 && name.length <= 100)) throw Error("Channel name is not between 2-100 characters")
         this.client.api.patch(`/channels/${this.id}`, {
             name
@@ -79,6 +78,23 @@ export default class Channel {
         return this
     }
 
+    public setTopic(topic: string) {
+        if (this.type != 0) throw new TypeError("Channel does not support topics")
+        this.client.api.patch(`/channels/${this.id}`, {
+            topic
+        })
+        this.topic = topic
+        return this
+    }
+
+    public setPosition(position: number) {
+        this.client.api.patch(`/channels/${this.id}`, {
+            position
+        })
+        this.position = position
+        return this
+    }
+
     public setCooldown(rate_limit_per_user: number) {
         if (this.type != 0) throw new TypeError("Channel does not support cooldowns")
         this.client.api.patch(`/channels/${this.id}`, {
@@ -86,6 +102,38 @@ export default class Channel {
         })
         this.cooldown = rate_limit_per_user
         return this
+    }
+
+    public setBitrate(bitrate: number) {
+        if (this.type != 2) throw TypeError("Channel is not a voice channel")
+        if (bitrate < 8000 || bitrate > 128000) throw TypeError(`Bitrate Value "${bitrate}" is below 8000 or above 128000`)
+        this.client.api.patch(`/channels/${this.id}`, {
+            bitrate
+        })
+        this.bitrate = bitrate
+        return this
+    }
+
+    public setUserLimit(user_limit: number) {
+        if (this.type != 2) throw TypeError("Channel is not a voice channel")
+        if (user_limit > 99) throw TypeError("User limit is larger than 99")
+        this.client.api.patch(`/channels/${this.id}`, {
+            user_limit
+        })
+        this.userLimit = user_limit
+        return this
+    }
+
+    public send(content: string) {
+        this.client.api.post(`/channels/${this.id}/messages`, {
+            content
+        })
+        // i need to change this to return a message object but i need resolvers for that and im too lazy to make rn so yeahhhhhh
+        return this
+    }
+
+    public triggerTyping() {
+        this.client.api.post(`/channels/${this.id}/typing`, {}) 
     }
 
     public delete() {
