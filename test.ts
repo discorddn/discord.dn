@@ -1,7 +1,6 @@
 import { Client } from "./src/structures/Client.ts";
 import Message from "./src/structures/Message.ts"
 const client = new Client();
-
 client.registerEvent("MESSAGE_CREATE", async (message: Message) => {
     message.reply("ok")
 });

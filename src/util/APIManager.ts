@@ -27,9 +27,9 @@ export default class APIManager {
 		});
 	}
 
-	delete(url: string, body: object, params?: APIParameters) {
+	delete(url: string, params?: APIParameters) {
 		return new Promise(async (res, rej) => {
-			fetch(this.DISCORD_API_BASE + url, { method: "DELETE", body: JSON.stringify(body), headers: { 'Content-Type': "application/json", 'Authorization': "Bot " + this.client.token } })
+			fetch(this.DISCORD_API_BASE + url, { method: "DELETE", headers: { 'Content-Type': "application/json", 'Authorization': "Bot " + this.client.token } })
 				.then(d => d.json())
 				.then(response => res(response))
 				.catch(err => rej);
