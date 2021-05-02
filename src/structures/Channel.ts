@@ -125,6 +125,7 @@ export default class Channel {
     }
 
     public send(content: string) {
+        if (content == "") throw Error("Content can't be blank")
         this.client.api.post(`/channels/${this.id}/messages`, {
             content
         })
