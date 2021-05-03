@@ -1,7 +1,9 @@
 import AvatarUrlOptions from "../../lib/interfaces/AvatarURLOptions.ts"
 import UserOptions from "../../lib/interfaces/UserOptions.ts"
+import { Client } from "./Client.ts"
 
 export default class User {
+    client: Client
     readonly id: string;
     readonly username: string;
     readonly tag: string;
@@ -11,7 +13,8 @@ export default class User {
     readonly locale: string;
     readonly flags: number;
 
-    constructor(options: UserOptions) {
+    constructor(options: UserOptions, client: Client) {
+        this.client = client
         this.id = options.id
         this.username = options.username
         this.tag = options.tag
@@ -37,6 +40,12 @@ export default class User {
 
     public get createdTimestamp(): Date {
         return new Date(this.createdAt)
+    }
+
+    public openDM() {
+        this.client.api.post("/users/@me/channels", {
+            recipient_id: this.id
+        })
     }
 
 }

@@ -7,10 +7,6 @@ const channel = new Channel({
     type: 0
 }, client)
 client.registerEvent("MESSAGE_CREATE", async (message: Message) => {
-    if (!message.content.startsWith("!talk")) return;
-    channel.triggerTyping()
-    setTimeout(() => {
-        channel.send("Hi")
-    }, 2000)
+    if (!message.content.startsWith("!test")) return;
 });
 client.login("ODM2MjY0MDQxODk4MDQ5NTM2.YIbdlA.54xiah6qoI2s7RwUMwpT_FLHuLk").then((state: any) => console.log("Login state", state));
