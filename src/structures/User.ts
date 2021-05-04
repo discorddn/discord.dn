@@ -4,14 +4,17 @@ import { Client } from "./Client.ts"
 
 export default class User {
     client: Client
-    readonly id: string;
-    readonly username: string;
-    readonly tag: string;
-    readonly avatar: string;
-    readonly bot: boolean;
-    readonly system: boolean;
-    readonly locale: string;
-    readonly flags: number;
+    id: string 
+    username: string 
+    tag: string
+    avatar: string 
+    bot: boolean 
+    system: boolean
+    mfaEnabled: boolean
+    locale: string
+    email: string
+    verified: boolean
+    flags: number
 
     constructor(options: UserOptions, client: Client) {
         this.client = client
@@ -23,6 +26,9 @@ export default class User {
         this.system = !!options.system
         this.locale = options.locale || ""
         this.flags = options.flags || 0
+        this.mfaEnabled = !!options.mfaEnabled
+        this.email = options.email || ""
+        this.verified = !!options.verified
     }
 
     public get fullName(): string {

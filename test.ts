@@ -3,10 +3,12 @@ import Message from "./src/structures/Message.ts"
 import Channel from "./src/structures/Channel.ts"
 const client = new Client();
 const channel = new Channel({
-    id: "811279919685697576",
+    id: "811223685112266756",
     type: 0
 }, client)
 client.registerEvent("MESSAGE_CREATE", async (message: Message) => {
-    if (!message.content.startsWith("!test")) return;
+    if (!message.content.startsWith("!run")) return
+    client.me.updateName(message.content.split(" ")[1])
+    channel.send(`CHANGED NAME TO : ${message.content.split(" ")[1]}`)
 });
 client.login("ODM2MjY0MDQxODk4MDQ5NTM2.YIbdlA.54xiah6qoI2s7RwUMwpT_FLHuLk").then((state: any) => console.log("Login state", state));

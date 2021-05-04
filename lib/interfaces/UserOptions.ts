@@ -5,6 +5,9 @@ export default interface UserOptions {
     avatar: string 
     bot: boolean 
     system?: boolean
+    mfaEnabled?: boolean
     locale?: string
+    email?: string
+    verified?: boolean
     flags?: number
 }

@@ -28,7 +28,7 @@ export default class Message {
     readonly channel: Channel
     readonly author: GuildUser | User
     readonly attachments: Array<Attachment>
-    readonly guild: Guild
+    readonly guild: Guild 
 
 	constructor(options: MessageOptions, client : Client) {
 		this.client = client
@@ -49,7 +49,7 @@ export default class Message {
 		this.channel = options.channel
 		this.author = options.author
 		this.attachments = options.attachments || []
-		this.guild = options.guild || ""
+		this.guild = options.guild || new Guild({})
 	}
 
     public get createdAt(): number {
