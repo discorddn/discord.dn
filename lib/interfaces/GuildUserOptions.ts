@@ -1,4 +1,5 @@
 import Role from "../../src/structures/Role.ts"
+import Guild from "../../src/structures/Guild.ts"
 
 export default interface GuildUserOptions {
     id: string 
@@ -17,4 +18,5 @@ export default interface GuildUserOptions {
     mute: boolean
     pending?: boolean
     permissions?: string
+    guild: Guild
 }

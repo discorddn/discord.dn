@@ -1,39 +1,41 @@
 import { Client } from "./Client.ts";
-import GuildUser from "../../src/structures/GuildUser.ts"
-import User from "../../src/structures/User.ts"
-import Role from "../../src/structures/Role.ts"
-import Embed from "../../src/structures/Embed.ts"
-import Attachment from "../../src/structures/Attachment.ts"
+import GuildUser from "./GuildUser.ts"
+import User from "./User.ts"
+import Role from "./Role.ts"
+import Embed from "./Embed.ts"
+import Attachment from "./Attachment.ts"
+import Channel from "./Channel.ts"
+import Guild from "./Guild.ts"
 import MessageOptions from "../../lib/interfaces/MessageOptions.ts";
 import MessageSendOptions from "../../lib/interfaces/MessageSendOptions.ts";
 
 export default class Message {
-    private client!: Client;
+    client!: Client;
     readonly type: number
     readonly tts: boolean
     readonly timestamp: string
-    readonly repliedToID?: string 
+    readonly repliedTo: Message | null
     readonly isPinned: boolean
     readonly nonce: string
-    readonly mentions?: Array<GuildUser>
-    readonly mentionRoles?: Array<Role>
+    readonly mentions: Array<GuildUser> | null
+    readonly mentionRoles: Array<Role>  | null
     readonly mentionEveryone: boolean
     readonly id: string
     readonly flags: number
     readonly embeds?: Array<Embed>
-    readonly editedTimestamp?: string
+    readonly editedTimestamp: string
     readonly content: string
-    readonly channelId: string
+    readonly channel: Channel
     readonly author: GuildUser | User
-    readonly attachments?: Array<Attachment>
-    readonly guildId?: string
+    readonly attachments: Array<Attachment>
+    readonly guild: Guild
 
 	constructor(options: MessageOptions, client : Client) {
 		this.client = client
 		this.type = options.type
 		this.tts = options.tts
 		this.timestamp = options.timestamp
-		this.repliedToID = options.referencedMessage || ""
+		this.repliedTo = options.referencedMessage || null
 		this.isPinned = options.pinned
 		this.nonce = options.nonce
 		this.mentions = options.mentions || []
@@ -44,10 +46,10 @@ export default class Message {
 		this.embeds = options.embeds || []
 		this.editedTimestamp = options.editedTimestamp || ""
 		this.content = options.content
-		this.channelId = options.channelId
+		this.channel = options.channel
 		this.author = options.author
 		this.attachments = options.attachments || []
-		this.guildId = options.guildId || ""
+		this.guild = options.guild || ""
 	}
 
     public get createdAt(): number {
@@ -59,22 +61,14 @@ export default class Message {
         return new Date(this.createdAt)
     }
 
-	public get repliedTo() {
-		this.client.api.get(`/channels/${this.channelId}/messages/${this.repliedToID}`)
-			.then(res => {
-				console.log(res)
-			})
-		return 
-	}
-
 	public reply(content: string) {
 		return new Promise(async (res, rej) => {
-			this.client.api.post(`/channels/${this.channelId}/messages`, {
+			this.client.api.post(`/channels/${this.channel.id}/messages`, {
 				content: content,
 				message_reference: {
 					message_id: this.id,
-					channel_id: this.channelId,
-					guild_id: this.guildId,
+					channel_id: this.channel.id,
+					guild_id: this.guild.id,
 					fail_if_not_exists: false
 				}
 			}).then(res).catch(rej)
