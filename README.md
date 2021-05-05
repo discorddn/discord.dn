@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/discorddn/discord.dn/blob/master/discord.dn.png?raw=true">
+  <img src="discord.dn.png" height="150" width="150">
   # Discord.DN
   
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
