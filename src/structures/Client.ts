@@ -4,6 +4,7 @@ import APIManager from "../util/APIManager.ts";
 import { Websocket } from "../websocket/Websocket.ts";
 import ClientUser from "./ClientUser.ts"
 import ClientUserResolver from "../resolvers/ClientUserResolver.ts"
+import UserResolver from "../resolvers/UserResolver.ts"
 
 /**
  * Starting point of any bot.
@@ -45,25 +46,28 @@ export class Client {
 	 * @returns {Promise<LoginResult>}
 	 * @example client.login('token');
 	 */
-	async login(token: string) {
+	public async login(token: string) {
 		return new Promise(async (res, rej) => {
 			if (!token || !token.length) throw new Error("INVALID_TOKEN");
 			this.token = token.replace(/^(Bot|Bearer)\s*/i, "");
-			this.api.get(`/users/@me`).then(data => {
-				this.me = ClientUserResolver(data, this)
-			})
+			this.me = ClientUserResolver(await this.api.get(`/users/@me`), this)
 			// @ts-expect-error 2322
 			const socketResult: boolean = this.socket.connect(token).then(() => res({ websocketConnected: true, token: token })).catch(err => rej({ websocketConnected: false, error: err }));
 		})
 	}
 
-	registerEvent(eventName: string, callback: Function) {
-		this.events.push({ eventName: eventName, callback: callback });
+	public registerEvent(eventName: string, callback: Function) {
+		this.events.push({ eventName, callback });
 		return this.events;
 	}
 
-	unregisterEvent(eventName: string) {
+	public unregisterEvent(eventName: string) {
 		this.events = this.events.filter(r => r.eventName !== eventName);
 		return this.events;
 	}
-};
+
+	public async fetchUser(id: string) {
+		return UserResolver(await this.api.get(`/users/${id}`), this)
+	}
+
+}
