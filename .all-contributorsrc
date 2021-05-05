@@ -14,6 +14,26 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "catcosmicice",
+      "name": "cosmicice",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67003720?v=4",
+      "profile": "https://cosmicice.cat",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "NorteX-dev",
+      "name": "NorteX-dev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/32877032?v=4",
+      "profile": "https://nortex.xyz/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
