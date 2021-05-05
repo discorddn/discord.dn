@@ -1,5 +1,5 @@
 <div align="center">
-  ![Discord.dn Logo](https://github.com/discorddn/discord.dn/raw/master/discord.dn.png)
+  ![Discord.dn Logo](https://github.com/discorddn/discord.dn/blob/master/discord.dn.png?raw=true)
   
   # Discord.dn
   
