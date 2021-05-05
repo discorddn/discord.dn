@@ -17,7 +17,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/DARKDRAGON532"><img src="https://avatars.githubusercontent.com/u/69623818?v=4?s=100" width="100px;" alt=""/><br /><sub><b>DARKDRAGON532</b></sub></a><br /><a href="https://github.com/discorddn/discord.dn/commits?author=DARKDRAGON532" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/DARKDRAGON532"><img src="https://avatars.githubusercontent.com/u/69623818?v=4?s=100" width="100px;" alt=""/><br /><sub><b>DARKDRAGON532</b></sub></a><br /><a href="https://github.com/discorddn/discord.dn/commits?author=DARKDRAGON532" title="Code">💻</a> <a href="https://github.com/discorddn/discord.dn/commits?author=DARKDRAGON532" title="Documentation">📖</a></td>
   </tr>
 </table>
 
