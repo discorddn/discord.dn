@@ -17,8 +17,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://cosmicice.cat"><img src="https://avatars.githubusercontent.com/u/67003720?v=4?s=100" width="100px;" alt=""/><br /><sub><b>cosmicice</b></sub></a><br /><a href="https://github.com/discorddn/discord.dn/commits?author=catcosmicice" title="Code">💻</a></td>
-    <td align="center"><a href="https://nortex.xyz/"><img src="https://avatars.githubusercontent.com/u/32877032?v=4?s=100" width="100px;" alt=""/><br /><sub><b>NorteX-dev</b></sub></a><br /><a href="https://github.com/discorddn/discord.dn/commits?author=NorteX-dev" title="Code">💻</a></td>
+    <td align="center"><a href="https://cosmicice.cat"><img src="https://avatars.githubusercontent.com/u/67003720?v=4?s=100" width="100px;" alt=""/><br /><sub><b>cosmicice</b></sub></a><br /><a href="https://github.com/discorddn/discord.dn/commits?author=catcosmicice" title="Code">💻</a> <a href="https://github.com/discorddn/discord.dn/commits?author=DARKDRAGON532" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/DARKDRAGON532"><img src="https://avatars.githubusercontent.com/u/69623818?v=4?s=100" width="100px;" alt=""/><br /><sub><b>DARKDRAGON532</b></sub></a><br /><a href="https://github.com/discorddn/discord.dn/commits?author=DARKDRAGON532" title="Code">💻</a> <a href="https://github.com/discorddn/discord.dn/commits?author=DARKDRAGON532" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://nortex.xyz/"><img src="https://avatars.githubusercontent.com/u/32877032?v=4?s=100" width="100px;" alt=""/><br /><sub><b>NorteX-dev</b></sub></a><br /><a href="https://github.com/discorddn/discord.dn/commits?author=NorteX-dev" title="Code">💻</a> <a href="https://github.com/discorddn/discord.dn/commits?author=DARKDRAGON532" title="Documentation">📖</a></td>
   </tr>
 </table>
 

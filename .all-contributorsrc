@@ -6,12 +6,23 @@
   "commit": false,
   "contributors": [
     {
+      "login": "DARKDRAGON532",
+      "name": "DARKDRAGON532",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69623818?v=4",
+      "profile": "https://github.com/DARKDRAGON532",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
       "login": "catcosmicice",
       "name": "cosmicice",
       "avatar_url": "https://avatars.githubusercontent.com/u/67003720?v=4",
       "profile": "https://cosmicice.cat",
       "contributions": [
-        "code"
+        "code",
+        "doc"
       ]
     },
     {
@@ -20,7 +31,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/32877032?v=4",
       "profile": "https://nortex.xyz/",
       "contributions": [
-        "code"
+        "code",
+        "doc"
       ]
     }
   ],
