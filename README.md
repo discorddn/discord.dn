@@ -1,7 +1,6 @@
 <div align="center">
-  ![Discord.dn Logo](https://github.com/discorddn/discord.dn/blob/master/discord.dn.png?raw=true)
-  
-  # Discord.dn
+  <img src="https://github.com/discorddn/discord.dn/blob/master/discord.dn.png?raw=true">
+  # Discord.DN
   
   <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
   [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
