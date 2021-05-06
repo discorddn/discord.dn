@@ -10,4 +10,6 @@ export default interface UserOptions {
     email?: string
     verified?: boolean
     flags?: number
+    premiumType?: number
+    publicFlags?: number
 }

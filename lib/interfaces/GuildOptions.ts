@@ -16,8 +16,8 @@ export default interface GuildOptions {
     owner: GuildUser
     permissions?: string
     region: string
-    afkChannel: Channel
-    afkTimeout: number
+    afkChannel?: Channel
+    afkTimeout?: number
     widgetEnabled?: boolean
     widgetChannel?: Channel
     verificationLevel: number
@@ -27,27 +27,27 @@ export default interface GuildOptions {
     emojis: Array<Emoji>
     features: Array<string>
     mfaLevel: number
-    systemChannel: Channel
-    systemChannelFlags: number
-    ruleChannel : Channel
+    systemChannel?: Channel
+    systemChannelFlags?: number
+    ruleChannel?: Channel
     joinedAt: string
     large?: boolean
     unavailable?: boolean
     memberCount?: number
-    voiceStates: Array<VoiceState>
+    voiceStates?: Array<VoiceState>
     members?: Array<GuildUser>
     channels?: Array<Channel>
     threads?: Array<Channel>
     presences?: Array<Presence>
     maxPresences?: number
     maxMembers?: number
-    vanityUrlCode: string
-    description: string
-    banner: string
+    vanityUrlCode?: string
+    description?: string
+    banner?: string
     premiumTier: number
     totalNitroBoosts: number
     preferredLocale: string
-    publicUpdatesChannel: Channel
+    publicUpdatesChannel?: Channel
     maxVideoChannelUsers?: number
     approximateMemberCount?: number
     approximatePresenceCount?: number

@@ -8,8 +8,13 @@ export default interface GuildUserOptions {
     avatar: string 
     bot: boolean 
     system?: boolean
+    mfaEnabled?: boolean
     locale?: string
+    email?: string
+    verified?: boolean
     flags?: number
+    premiumType?: number
+    publicFlags?: number
     nickname: string
     roles: Array<Role>
     joinedAt: string

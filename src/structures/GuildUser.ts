@@ -13,8 +13,8 @@ export default class GuildUser extends User {
     boostingSince: string
     deaf: boolean
     mute: boolean
-    pending: boolean | undefined
-    permissions: string | undefined
+    pending?: boolean 
+    permissions?: string 
     guild: Guild
 
     constructor(options: GuildUserOptions, client: Client) {

@@ -13,7 +13,9 @@ export default function UserResolver(data: any, client: Client) {
         locale: data.locale,
         email: data.email,
         verified: data.verified,
-        flags: data.flags
+        flags: data.flags,
+        publicFlags: data.public_flags,
+        premiumType: data.premium_type
     }, client)
 }
 

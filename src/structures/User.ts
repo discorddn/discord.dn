@@ -9,13 +9,15 @@ export default class User {
     tag: string
     avatar: string 
     bot: boolean 
-    system: boolean
-    mfaEnabled: boolean
-    locale: string
-    email: string
-    verified: boolean
-    flags: number
-
+    system?: boolean
+    mfaEnabled?: boolean
+    locale?: string
+    email?: string
+    verified?: boolean
+    flags?: number
+    premiumType?: number
+    publicFlags?: number
+    
     constructor(options: UserOptions, client: Client) {
         this.client = client
         this.id = options.id
@@ -24,11 +26,13 @@ export default class User {
         this.avatar = options.avatar
         this.bot = options.bot
         this.system = !!options.system
-        this.locale = options.locale || ""
-        this.flags = options.flags || 0
+        this.locale = options.locale 
+        this.flags = options.flags 
         this.mfaEnabled = !!options.mfaEnabled
-        this.email = options.email || ""
+        this.email = options.email 
+        this.premiumType = options.premiumType
         this.verified = !!options.verified
+        this.publicFlags = options.publicFlags
     }
 
     public get fullName(): string {

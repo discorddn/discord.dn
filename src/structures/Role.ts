@@ -1,8 +1,10 @@
 import RoleOptions from "../../lib/interfaces/RoleOptions.ts"
 import RoleTag from "./RoleTag.ts"
+import Guild from "./RoleTag.ts"
 import { Client } from "./Client.ts"
 
 export default class Role {
+    guild: Guild
     client: Client
     id: string
     name: string
@@ -12,9 +14,10 @@ export default class Role {
     permissions: string
     managed: boolean
     mentionable: boolean
-    tags: RoleTag | null
+    tags?: RoleTag 
 
-    constructor(options: RoleOptions, client: Client) {
+    constructor(options: RoleOptions, guild: Guild, client: Client) {
+        this.guild = guild
         this.client = client
         this.id = options.id
         this.name = options.name
@@ -24,7 +27,7 @@ export default class Role {
         this.permissions = options.permissions
         this.managed = options.managed
         this.mentionable = options.mentionable
-        this.tags = options.tags || null
+        this.tags = options.tags 
     }
 
     public get createdAt(): number {
