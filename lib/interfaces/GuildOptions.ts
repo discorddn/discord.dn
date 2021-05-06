@@ -3,6 +3,8 @@ import Channel from "../../src/structures/Channel.ts"
 import Role from "../../src/structures/Role.ts"
 import Emoji from "../../src/structures/Emoji.ts"
 import VoiceState from "../../src/structures/VoiceState.ts"
+import Presence from "../../src/structures/Presence.ts"
+import WelcomeScreen from "../../src/structures/WelcomeScreen.ts"
 
 export default interface GuildOptions {
     id: string
@@ -36,7 +38,19 @@ export default interface GuildOptions {
     members?: Array<GuildUser>
     channels?: Array<Channel>
     threads?: Array<Channel>
-    /*
-    need to finish
-    */
+    presences?: Array<Presence>
+    maxPresences?: number
+    maxMembers?: number
+    vanityUrlCode: string
+    description: string
+    banner: string
+    premiumTier: number
+    totalNitroBoosts: number
+    preferredLocale: string
+    publicUpdatesChannel: Channel
+    maxVideoChannelUsers?: number
+    approximateMemberCount?: number
+    approximatePresenceCount?: number
+    welcomeScreen?: WelcomeScreen
+    nsfw: boolean
 }

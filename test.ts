@@ -10,7 +10,5 @@ client.registerEvent("MESSAGE_CREATE", async (message: Message) => {
     if (!message.content.startsWith("!run")) return
     const id = message.content.split(" ")[1]
     // const x = client.fetchUser(id)
-    const x = await client.fetchUser(id)
-    channel.send(x.fullName)
 });
 client.login("ODM2MjY0MDQxODk4MDQ5NTM2.YIbdlA.54xiah6qoI2s7RwUMwpT_FLHuLk").then((state: any) => console.log("Login state", state));

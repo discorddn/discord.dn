@@ -48,10 +48,16 @@ export default class User {
         return new Date(this.createdAt)
     }
 
-    public openDM() {
-        this.client.api.post("/users/@me/channels", {
+    public async openDM() {
+        return await this.client.api.post("/users/@me/channels", {
             recipient_id: this.id
         })
     }
 
+    public async send(content: string) {
+        const dmChannel: any = await this.openDM()
+        return await this.client.api.post(`/channels/${dmChannel.id}/messages`, {
+            content
+        })
+    }
 }
