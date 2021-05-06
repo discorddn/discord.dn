@@ -1,4 +1,4 @@
-export default interface ClientStatusOptions {
+export default interface PresenceStatusOptions {
     desktop?: string
     mobile?: string
     web?: string

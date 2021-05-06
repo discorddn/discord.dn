@@ -1,6 +1,6 @@
 import GuildUser from "../../src/structures/GuildUser.ts"
 import Guild from "../../src/structures/Guild.ts"
-import ClientStatus from "../../src/structures/ClientStatus.ts"
+import PresenceStatus from "../../src/structures/PresenceStatus.ts"
 import Activity from "../../src/structures/Activity.ts"
 
 export default interface PresenceOptions {
@@ -8,5 +8,5 @@ export default interface PresenceOptions {
     guild: Guild
     status: string
     activities: Array<Activity>
-    clientStatus: Array<ClientStatus>
+    PresenceStatus: Array<PresenceStatus>
 }

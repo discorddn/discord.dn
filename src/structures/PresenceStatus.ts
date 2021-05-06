@@ -1,11 +1,11 @@
-import ClientStatusOptions from "../../lib/interfaces/ClientStatusOptions.ts"
+import PresenceStatusOptions from "../../lib/interfaces/PresenceStatusOptions.ts"
 
-export default class ClientStatus {
+export default class PresenceStatus {
     desktop: string
     mobile: string
     web: string
 
-    constructor(options: ClientStatusOptions) {
+    constructor(options: PresenceStatusOptions) {
         this.desktop = options.desktop || ""
         this.mobile = options.mobile || ""
         this.web = options.web || ""
