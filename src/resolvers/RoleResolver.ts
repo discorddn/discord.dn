@@ -13,7 +13,7 @@ export default function RoleResolver(data: any, guild: Guild, client: Client) {
         mentionable: data.mentionable,
         permissions: data.permissions,
         position: data.position,
-        tags: new RoleTag({botId: data.tag!.bot_id, integrationId: data.tag!.integration_id, premiumSubscriber: data.tag!.premium_subscriber})
-    // @ts-expect-error
+        tags: new RoleTag({botId: data.tag!.bot_id, integrationId: data.tag!.integration_id, premiumSubscriber: data.tag!.premium_subscriber}),
+        // @ts-ignore
     }, guild, client)
 }

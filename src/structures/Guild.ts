@@ -6,7 +6,6 @@ import Emoji from "./Emoji.ts"
 import VoiceState from "./VoiceState.ts"
 import Presence from "./Presence.ts"
 import WelcomeScreen from "./WelcomeScreen.ts"
-import RoleResolver from "../resolvers/RoleResolver.ts"
 import GuildUserResolver from "../resolvers/GuildUserResolver.ts"
 import { Client } from "./Client.ts"
 
@@ -122,9 +121,18 @@ export default class Guild {
         return GuildUserResolver(await this.client.api.get(`/guilds/${this.id}/members/${id}`), this, this.client)
     }
 
-    // @ts-expect-error 2389
-    public getRole(idFilter: function) {
-        return RoleResolver(this.roles.find(idFilter), this, this.client)
+    public getRole(idFilter: (role: Role) => Role) {
+        return this.roles.find(idFilter)
+    }
+
+    public getRoles(idFilter: (role: Role) => Role) {
+        return this.roles.filter(idFilter)
+    }
+
+    public async setNick(user: GuildUser, nick: string) {
+        return GuildUserResolver(await this.client.api.patch(`/guilds/${this.id}/members/${user.id}`, {
+            nick
+        }), this, this.client)
     }
 
 }
