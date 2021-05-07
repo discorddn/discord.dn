@@ -2,14 +2,25 @@
   <img src="discord.dn.png" height="150" width="150">
   <h1>Discord.DN</h1>
   
-  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-  [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
-  <!-- ALL-CONTRIBUTORS-BADGE:END -->
+  <a href="#contributors-">
+    <img src="https://img.shields.io/badge/all_contributors-3-orange.svg?style=for-the-badge">
+  </a>
+  <a href="LICENSE.md">
+    <img src="https://img.shields.io/github/license/discorddn/discord.dn?style=for-the-badge">
+  </a>
+  <a href="https://deno.land/x/discorddn">
+    <img src="https://img.shields.io/badge/deno.land%2Fx-v0.0.1-9cf?style=for-the-badge">
+  </a>
+  
 </div>
 
-> A Deno Library to interact with the Discord API
+> *A Deno Library to interact with the Discord API*
 
-...
+## How to import
+
+```ts
+import { Client } from 'https://deno.land/x/discorddn/mod.ts';
+```
 
 ## Contributors ✨
 
