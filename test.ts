@@ -14,4 +14,4 @@ client.registerEvent("MESSAGE_CREATE", async (message: Message) => {
     const user = await client.fetchUser(id)
     channel.send(user.avatarUrl({format:  message.content.split(" ")[2] == "gif" ? "gif" : "png", size: 4096}))
 });
-client.login(Deno.env.get("TOKEN") ?? "cock").then((state: any) => console.log("Login state", state));
+client.login(Deno.env.get("TOKEN") ?? "").then((state: any) => console.log("Login state", state));

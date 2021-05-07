@@ -31,10 +31,11 @@ export class Websocket {
 						"d": {
 							token: token,
 							intents: 513,
+							"large_threshold": 250,
 							properties: {
 								$os: "linux",
-								$browser: "my_library",
-								$device: "my_library"
+								$browser: "discord.dn",
+								$device: "discord.dn"
 							}
 						}
 					}));
