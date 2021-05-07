@@ -121,11 +121,11 @@ export default class Guild {
         return GuildUserResolver(await this.client.api.get(`/guilds/${this.id}/members/${id}`), this, this.client)
     }
 
-    public getRole(idFilter: (role: Role) => Role) {
+    public getRole(idFilter: (role: Role) => boolean) {
         return this.roles.find(idFilter)
     }
 
-    public getRoles(idFilter: (role: Role) => Role) {
+    public getRoles(idFilter: (role: Role) => boolean) {
         return this.roles.filter(idFilter)
     }
 
