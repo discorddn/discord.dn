@@ -19,7 +19,7 @@ export default function GuildUserResolver(data: any, guild: Guild, client: Clien
         premiumType: data.user!.premium_type,
         publicFlags: data.user!.public_flags,
         nickname: data.nick,
-        roles: data.roles.map((id: string) => guild.getRole(id)),
+        roles: data.roles.map((id: string) => guild.getRole(r => r.id === id)),
         joinedAt: data.joined_at,
         boostingSince: data.premium_since,
         deaf: data.deaf,
