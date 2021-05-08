@@ -1,6 +1,6 @@
-import RoleTagOptions from "../../lib/interfaces/RoleTagOptions.ts"
+import { RoleTagOptions } from "../../lib/interfaces/RoleTagOptions.ts"
 
-export default class RoleTag {
+export class RoleTag {
     readonly botId?: string
     readonly integrationId?: string
     readonly premiumSubscriber?: null

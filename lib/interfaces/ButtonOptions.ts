@@ -1,4 +1,4 @@
-export default interface ButtonOptions {
+export interface ButtonOptions {
     label: string
     url: string
 }

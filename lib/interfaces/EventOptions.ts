@@ -1,4 +1,4 @@
-export default interface EventOptions {
+export interface EventOptions {
     eventName: string;
     callback: Function;
 }

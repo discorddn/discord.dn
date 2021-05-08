@@ -1,7 +1,7 @@
-import Role from "../../src/structures/Role.ts"
-import User from "../../src/structures/User.ts"
+import { Role } from "../../src/structures/Role.ts"
+import { User } from "../../src/structures/User.ts"
 
-export default interface EmojiOptions {
+export interface EmojiOptions {
     id: string
     name: string
     roles?: Array<Role>

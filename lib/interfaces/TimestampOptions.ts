@@ -1,4 +1,4 @@
-export default interface TImestampOptions {
+export interface TimestampOptions {
     start?: number
     end?: number
 }

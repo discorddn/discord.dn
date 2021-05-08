@@ -1,6 +1,6 @@
 import { Client } from "./src/structures/Client.ts";
-import Message from "./src/structures/Message.ts"
-import Channel from "./src/structures/Channel.ts"
+import { Message } from "./src/structures/Message.ts"
+import { Channel } from "./src/structures/Channel.ts"
 import "https://deno.land/x/dotenv@v2.0.0/load.ts";
 
 const client = new Client();

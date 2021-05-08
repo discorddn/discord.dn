@@ -1,13 +1,13 @@
-import ActivityOptions from "../../lib/interfaces/ActivityOptions.ts"
-import Timestamp from "./Timestamp.ts"
-import Emoji from "./Emoji.ts"
-import Party from "./Party.ts"
-import Assets from "./Assets.ts"
-import Secrets from "./Secrets.ts"
-import Button from "./Button.ts"
+import { ActivityOptions } from "../../lib/interfaces/ActivityOptions.ts"
+import { Timestamp } from "./Timestamp.ts"
+import { Emoji } from "./Emoji.ts"
+import { Party } from "./Party.ts"
+import { Assets } from "./Assets.ts"
+import { Secrets } from "./Secrets.ts"
+import { Button } from "./Button.ts"
 import { Client } from "./Client.ts"
 
-export default class Activity {
+export class Activity {
     client: Client
     name: string
     type: number

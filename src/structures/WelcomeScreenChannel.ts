@@ -1,7 +1,7 @@
-import WelcomeScreenChannelOptions from "../../lib/interfaces/WelcomeScreenChannelOptions.ts"
-import Channel from "./Channel.ts"
+import { WelcomeScreenChannelOptions } from "../../lib/interfaces/WelcomeScreenChannelOptions.ts"
+import { Channel } from "./Channel.ts"
 
-export default class WelcomeScreenChannel {
+export class WelcomeScreenChannel {
     channel: Channel
     description: string
     emojiId: string

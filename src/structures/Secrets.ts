@@ -1,6 +1,6 @@
-import SecretsOptions from "../../lib/interfaces/SecretsOptions.ts"
+import { SecretsOptions } from "../../lib/interfaces/SecretsOptions.ts"
 
-export default class Secrets {
+export class Secrets {
     join: string
     spectate: string
     match: string

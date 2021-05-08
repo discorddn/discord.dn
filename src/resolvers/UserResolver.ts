@@ -1,7 +1,7 @@
-import User from "../structures/User.ts";
+import { User } from "../structures/User.ts";
 import { Client } from "../structures/Client.ts";
 
-export default function UserResolver(data: any, client: Client) {
+export function UserResolver(data: any, client: Client) {
     return new User({
         id: data.id,
         username: data.username,

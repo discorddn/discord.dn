@@ -1,9 +1,9 @@
-import RoleOptions from "../../lib/interfaces/RoleOptions.ts"
-import RoleTag from "./RoleTag.ts"
-import Guild from "./RoleTag.ts"
+import { RoleOptions } from "../../lib/interfaces/RoleOptions.ts"
+import { RoleTag } from "./RoleTag.ts"
+import { Guild } from "./Guild.ts"
 import { Client } from "./Client.ts"
 
-export default class Role {
+export class Role {
     guild: Guild
     client: Client
     id: string

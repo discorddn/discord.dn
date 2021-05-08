@@ -1,8 +1,8 @@
-import ThreadMemberOptions from "../../lib/interfaces/ThreadMemberOptions.ts"
-import Channel from "./Channel.ts"
-import GuildUser from "./GuildUser.ts"
+import { ThreadMemberOptions}  from "../../lib/interfaces/ThreadMemberOptions.ts"
+import { Channel } from "./Channel.ts"
+import { GuildUser } from "./GuildUser.ts"
 
-export default class ThreadMember { 
+export class ThreadMember { 
     readonly channel: Channel
     readonly user: GuildUser
     readonly joinTimestamp: string

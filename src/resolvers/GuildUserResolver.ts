@@ -1,9 +1,9 @@
-import GuildUser from "../structures/GuildUser.ts";
-import Guild from "../structures/Guild.ts";
-import RoleResolver from "./RoleResolver.ts";
+import { GuildUser } from "../structures/GuildUser.ts";
+import { Guild } from "../structures/Guild.ts";
+import { RoleResolver } from "./RoleResolver.ts";
 import { Client } from "../structures/Client.ts";
 
-export default function GuildUserResolver(data: any, guild: Guild, client: Client) {
+export function GuildUserResolver(data: any, guild: Guild, client: Client) {
     return new GuildUser({
         id: data.user!.id, 
         username: data.user!.username,

@@ -1,6 +1,6 @@
-import ButtonOptions from "../../lib/interfaces/ButtonOptions.ts"
+import { ButtonOptions } from "../../lib/interfaces/ButtonOptions.ts"
 
-export default class Button {
+export class Button {
     label: string
     url: string
 

@@ -1,6 +1,6 @@
-import RoleTag from "../../src/structures/RoleTag.ts"
+import { RoleTag } from "../../src/structures/RoleTag.ts"
 
-export default interface RoleOptions {
+export interface RoleOptions {
     id: string
     name: string
     color: number

@@ -1,6 +1,6 @@
-import PartyOptions from "../../lib/interfaces/PartyOptions.ts"
+import { PartyOptions } from "../../lib/interfaces/PartyOptions.ts"
 
-export default class Party {
+export class Party {
     id: string
     size: [number, number]
 

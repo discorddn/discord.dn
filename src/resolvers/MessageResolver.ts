@@ -1,5 +1,5 @@
-import Message from "../structures/Message.ts"
+import { Message } from "../structures/Message.ts"
 
-export default function MessageResolver(message: object) {
+export function MessageResolver(message: object) {
     
 }

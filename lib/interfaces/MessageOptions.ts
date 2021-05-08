@@ -1,15 +1,15 @@
-import GuildUser from "../../src/structures/GuildUser.ts"
-import User from "../../src/structures/User.ts"
-import Role from "../../src/structures/Role.ts"
-import Embed from "../../src/structures/Embed.ts"
-import Attachment from "../../src/structures/Attachment.ts"
-import Message from "../../src/structures/Message.ts"
-import Channel from "../../src/structures/Channel.ts"
-import Guild from "../../src/structures/Guild.ts"
-import Reaction from "../../src/structures/Reaction.ts"
-import Sticker from "../../src/structures/Sticker.ts"
+import { GuildUser } from "../../src/structures/GuildUser.ts"
+import { User } from "../../src/structures/User.ts"
+import { Role } from "../../src/structures/Role.ts"
+import { Embed } from "../../src/structures/Embed.ts"
+import { Attachment } from "../../src/structures/Attachment.ts"
+import { Message } from "../../src/structures/Message.ts"
+import { Channel } from "../../src/structures/Channel.ts"
+import { Guild } from "../../src/structures/Guild.ts"
+import { Reaction } from "../../src/structures/Reaction.ts"
+import { Sticker } from "../../src/structures/Sticker.ts"
 
-export default interface MessageOptions {
+export interface MessageOptions {
     type: number
     tts: boolean
     timestamp: string

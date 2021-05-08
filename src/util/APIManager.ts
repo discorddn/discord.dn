@@ -1,6 +1,6 @@
 import { Client } from "../structures/Client.ts";
-import APIParameters from "../../lib/interfaces/APIParameters.ts"
-export default class APIManager {
+import { APIParameters } from "../../lib/interfaces/APIParameters.ts"
+export class APIManager {
 	private DISCORD_API_BASE: string = "https://discord.com/api/v9";
 
 	private client: Client;

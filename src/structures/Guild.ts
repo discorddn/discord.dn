@@ -1,15 +1,15 @@
-import GuildOptions from "../../lib/interfaces/GuildOptions.ts"
-import GuildUser from "./GuildUser.ts"
-import Channel from "./Channel.ts"
-import Role from "./Role.ts"
-import Emoji from "./Emoji.ts"
-import VoiceState from "./VoiceState.ts"
-import Presence from "./Presence.ts"
-import WelcomeScreen from "./WelcomeScreen.ts"
-import GuildUserResolver from "../resolvers/GuildUserResolver.ts"
+import { GuildOptions } from "../../lib/interfaces/GuildOptions.ts"
+import { GuildUser } from "./GuildUser.ts"
+import { Channel } from "./Channel.ts"
+import { Role } from "./Role.ts"
+import { Emoji } from "./Emoji.ts"
+import { VoiceState } from "./VoiceState.ts"
+import { Presence } from "./Presence.ts"
+import { WelcomeScreen } from "./WelcomeScreen.ts"
+import { GuildUserResolver } from "../resolvers/GuildUserResolver.ts"
 import { Client } from "./Client.ts"
 
-export default class Guild {
+export class Guild {
     client: Client
     id: string
     name : string

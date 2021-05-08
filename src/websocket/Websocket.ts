@@ -1,6 +1,5 @@
 import { Client } from "../structures/Client.ts";
-import EventOptions from "../../lib/interfaces/EventOptions.ts";
-import Message from "../structures/Message.ts"
+import { EventOptions } from "../../lib/interfaces/EventOptions.ts";
 
 export class Websocket {
 	client: Client;

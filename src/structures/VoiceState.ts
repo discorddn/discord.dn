@@ -1,9 +1,8 @@
-import Guild from "./Guild.ts";
-import Channel from "./Channel.ts"
-import GuildUser from "./GuildUser.ts"
-import VoiceStateOptions from "../../lib/interfaces/VoiceStateOptions.ts"
+import { Guild } from "./Guild.ts";
+import { Channel } from "./Channel.ts"
+import { GuildUser } from "./GuildUser.ts"
 
-export default class VoiceState {
+export class VoiceState {
     guild: Guild
     channel: Channel
     user: GuildUser

@@ -1,6 +1,6 @@
-import WelcomeScreenChannel from "../../src/structures/WelcomeScreenChannel.ts"
+import { WelcomeScreenChannel } from "../../src/structures/WelcomeScreenChannel.ts"
 
-export default interface WelcomeScreenOptions {
+export interface WelcomeScreenOptions {
     description: string
     welcomeChannels: Array<WelcomeScreenChannel>
 }

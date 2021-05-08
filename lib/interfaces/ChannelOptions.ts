@@ -1,11 +1,11 @@
-import ChannelOverwrite from "../../src/structures/ChannelOverwrite.ts"
-import User from "../../src/structures/User.ts"
-import Guild from "../../src/structures/Guild.ts"
-import Message from "../../src/structures/Message.ts"
-import ThreadMetadata from "../../src/structures/ThreadMetadata.ts"
-import ThreadMember from "../../src/structures/ThreadMember.ts"
+import { ChannelOverwrite } from "../../src/structures/ChannelOverwrite.ts"
+import { User } from "../../src/structures/User.ts"
+import { Guild } from "../../src/structures/Guild.ts"
+import { Message } from "../../src/structures/Message.ts"
+import { ThreadMetadata } from "../../src/structures/ThreadMetadata.ts"
+import { ThreadMember } from "../../src/structures/ThreadMember.ts"
 
-export default interface ChannelOptions {
+export interface ChannelOptions {
     id: string
     type: number
     guild?: Guild

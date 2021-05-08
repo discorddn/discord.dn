@@ -1,6 +1,6 @@
-import AssetsOptions from "../../lib/interfaces/AssetsOptions.ts"
+import { AssetsOptions } from "../../lib/interfaces/AssetsOptions.ts"
 
-export default class Assets {
+export class Assets {
     largeImage: string
     largeText: string
     smallImage: string

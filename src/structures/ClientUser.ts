@@ -1,8 +1,8 @@
 import { Client } from "./Client.ts"
-import User from "./User.ts"
-import UserOptions from "../../lib/interfaces/UserOptions.ts"
+import { User } from "./User.ts"
+import { UserOptions } from "../../lib/interfaces/UserOptions.ts"
 
-export default class ClientUser extends User {
+export class ClientUser extends User {
 
     constructor(options: UserOptions, client: Client) {
         super(options, client)

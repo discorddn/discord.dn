@@ -1,7 +1,7 @@
-import WelcomeScreenOptions from "../../lib/interfaces/WelcomeScreenOptions.ts"
-import WelcomeScreenChannel from "./WelcomeScreenChannel.ts"
+import { WelcomeScreenOptions } from "../../lib/interfaces/WelcomeScreenOptions.ts"
+import { WelcomeScreenChannel } from "./WelcomeScreenChannel.ts"
 
-export default class WelcomeScreen {
+export class WelcomeScreen {
     description: string
     welcomeChannels: Array<WelcomeScreenChannel>
 

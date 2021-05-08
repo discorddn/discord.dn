@@ -1,6 +1,6 @@
-import TimestampOptions from "../../lib/interfaces/TimestampOptions.ts"
+import { TimestampOptions } from "../../lib/interfaces/TimestampOptions.ts"
 
-export default class Timestamp {
+export class Timestamp {
     start: number
     end: number
 

@@ -1,6 +1,6 @@
-import PresenceStatusOptions from "../../lib/interfaces/PresenceStatusOptions.ts"
+import { PresenceStatusOptions } from "../../lib/interfaces/PresenceStatusOptions.ts"
 
-export default class PresenceStatus {
+export class PresenceStatus {
     desktop: string
     mobile: string
     web: string

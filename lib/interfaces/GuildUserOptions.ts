@@ -1,7 +1,7 @@
-import Role from "../../src/structures/Role.ts"
-import Guild from "../../src/structures/Guild.ts"
+import { Role } from "../../src/structures/Role.ts"
+import { Guild } from "../../src/structures/Guild.ts"
 
-export default interface GuildUserOptions {
+export interface GuildUserOptions {
     id: string 
     username: string 
     tag: string

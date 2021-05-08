@@ -1,4 +1,3 @@
-export default interface APIParameters {
+export interface APIParameters {
 	headers?: Array<any>;
-
 }

@@ -1,9 +1,9 @@
 import { Client } from "../structures/Client.ts"
-import Role from "../structures/Role.ts"
-import RoleTag from "../structures/RoleTag.ts"
-import Guild from "../structures/Guild.ts"
+import { Role } from "../structures/Role.ts"
+import { RoleTag } from "../structures/RoleTag.ts"
+import { Guild } from "../structures/Guild.ts"
 
-export default function RoleResolver(data: any, guild: Guild, client: Client) {
+export function RoleResolver(data: any, guild: Guild, client: Client) {
     return new Role({
         id: data.id,
         name: data.name,

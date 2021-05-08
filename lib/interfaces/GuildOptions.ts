@@ -1,12 +1,12 @@
-import GuildUser from "../../src/structures/GuildUser.ts"
-import Channel from "../../src/structures/Channel.ts"
-import Role from "../../src/structures/Role.ts"
-import Emoji from "../../src/structures/Emoji.ts"
-import VoiceState from "../../src/structures/VoiceState.ts"
-import Presence from "../../src/structures/Presence.ts"
-import WelcomeScreen from "../../src/structures/WelcomeScreen.ts"
+import { GuildUser } from "../../src/structures/GuildUser.ts"
+import { Channel } from "../../src/structures/Channel.ts"
+import { Role } from "../../src/structures/Role.ts"
+import { Emoji } from "../../src/structures/Emoji.ts"
+import { VoiceState } from "../../src/structures/VoiceState.ts"
+import { Presence } from "../../src/structures/Presence.ts"
+import { WelcomeScreen } from "../../src/structures/WelcomeScreen.ts"
 
-export default interface GuildOptions {
+export interface GuildOptions {
     id: string
     name : string
     icon: string

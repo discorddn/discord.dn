@@ -1,4 +1,4 @@
-export default interface UserOptions {
+export interface UserOptions {
     id: string 
     username: string 
     tag: string

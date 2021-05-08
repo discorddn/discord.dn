@@ -1,13 +1,13 @@
-import ChannelOptions from "../../lib/interfaces/ChannelOptions.ts"
-import Guild from "./Guild.ts"
-import ChannelOverwrite from "./ChannelOverwrite.ts"
-import Message from "./Message.ts"
-import User from "./User.ts"
-import ThreadMetadata from "./ThreadMetadata.ts"
-import ThreadMember from "./ThreadMember.ts"
+import { ChannelOptions } from "../../lib/interfaces/ChannelOptions.ts"
+import { Guild } from "./Guild.ts"
+import { ChannelOverwrite } from "./ChannelOverwrite.ts"
+import { Message } from "./Message.ts"
+import { User } from "./User.ts"
+import { ThreadMetadata } from "./ThreadMetadata.ts"
+import { ThreadMember } from "./ThreadMember.ts"
 import { Client }  from "./Client.ts"
 
-export default class Channel {
+export class Channel {
     client: Client
     id: string
     type: number

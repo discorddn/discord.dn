@@ -1,15 +1,14 @@
 import { Client } from "./Client.ts";
-import GuildUser from "./GuildUser.ts"
-import User from "./User.ts"
-import Role from "./Role.ts"
-import Embed from "./Embed.ts"
-import Attachment from "./Attachment.ts"
-import Channel from "./Channel.ts"
-import Guild from "./Guild.ts"
-import MessageOptions from "../../lib/interfaces/MessageOptions.ts";
-import MessageSendOptions from "../../lib/interfaces/MessageSendOptions.ts";
+import { GuildUser } from "./GuildUser.ts"
+import { User } from "./User.ts"
+import { Role } from "./Role.ts"
+import { Embed } from "./Embed.ts"
+import { Attachment } from "./Attachment.ts"
+import { Channel } from "./Channel.ts"
+import { Guild } from "./Guild.ts"
+import { MessageOptions } from "../../lib/interfaces/MessageOptions.ts";
 
-export default class Message {
+export class Message {
     client!: Client;
     readonly type: number
     readonly tts: boolean

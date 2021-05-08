@@ -1,6 +1,6 @@
-import ChannelOverwriteOptions from "../../lib/interfaces/ChannelOverwriteOptions.ts"
+import { ChannelOverwriteOptions } from "../../lib/interfaces/ChannelOverwriteOptions.ts"
 
-export default class ChannelOverwrite {
+export class ChannelOverwrite {
     readonly id: string
     readonly type: number
     readonly allow: string

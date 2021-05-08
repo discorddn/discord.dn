@@ -1,9 +1,9 @@
-import EmojiOptions from "../../lib/interfaces/EmojiOptions.ts"
-import Role from "./Role.ts"
-import User from "./User.ts"
+import { EmojiOptions } from "../../lib/interfaces/EmojiOptions.ts"
+import { Role } from "./Role.ts"
+import { User } from "./User.ts"
 import { Client } from "./Client.ts"
 
-export default class Emoji {
+export class Emoji {
     client: Client
     id: string
     name: string

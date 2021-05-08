@@ -1,6 +1,6 @@
-import GuildUser from "../../src/structures/GuildUser.ts"
+import { GuildUser } from "../../src/structures/GuildUser.ts"
 
-export default interface ThreadMetadataOptions {
+export interface ThreadMetadataOptions {
     archived: boolean
     archiver?: GuildUser
     autoArchiveDuration: number

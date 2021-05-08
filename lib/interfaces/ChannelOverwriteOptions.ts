@@ -1,4 +1,4 @@
-export default interface ChannelOverwriteOptions {
+export interface ChannelOverwriteOptions {
     id: string
     type: number
     allow: string

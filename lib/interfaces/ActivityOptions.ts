@@ -1,11 +1,11 @@
-import Timestamp from "../../src/structures/Timestamp.ts"
-import Emoji from "../../src/structures/Emoji.ts"
-import Party from "../../src/structures/Party.ts"
-import Assets from "../../src/structures/Assets.ts"
-import Secrets from "../../src/structures/Secrets.ts"
-import Button from "../../src/structures/Button.ts"
+import { Timestamp } from "../../src/structures/Timestamp.ts"
+import { Emoji } from "../../src/structures/Emoji.ts"
+import { Party } from "../../src/structures/Party.ts"
+import { Assets } from "../../src/structures/Assets.ts"
+import { Secrets } from "../../src/structures/Secrets.ts"
+import { Button } from "../../src/structures/Button.ts"
 
-export default interface ActivityOptions {
+export interface ActivityOptions {
     name: string
     type: number
     url?: string

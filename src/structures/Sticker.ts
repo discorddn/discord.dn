@@ -1,3 +1,3 @@
-export default class Sticker {
+export class Sticker {
     
 }

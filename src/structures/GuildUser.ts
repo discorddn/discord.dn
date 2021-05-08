@@ -1,11 +1,11 @@
-import User from "./User.ts"
-import Role from "./Role.ts"
-import Guild from "./Guild.ts"
+import { User } from "./User.ts"
+import { Role } from "./Role.ts"
+import { Guild } from "./Guild.ts"
 import { Client } from "./Client.ts"
-import GuildUserOptions from "../../lib/interfaces/GuildUserOptions.ts"
-import GuildUserBanOptions from "../../lib/interfaces/GuildUserBanOptions.ts"
+import { GuildUserOptions } from "../../lib/interfaces/GuildUserOptions.ts"
+import { GuildUserBanOptions } from "../../lib/interfaces/GuildUserBanOptions.ts"
 
-export default class GuildUser extends User {
+export class GuildUser extends User {
     client: Client
     nickname: string
     roles: Array<Role>

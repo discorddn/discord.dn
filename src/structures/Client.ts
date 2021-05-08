@@ -1,10 +1,10 @@
-import ClientOptions from "../../lib/interfaces/ClientOptions.ts";
-import EventOptions from "../../lib/interfaces/EventOptions.ts";
-import APIManager from "../util/APIManager.ts";
+import { ClientOptions } from "../../lib/interfaces/ClientOptions.ts";
+import { EventOptions } from "../../lib/interfaces/EventOptions.ts";
+import { APIManager } from "../util/APIManager.ts";
 import { Websocket } from "../websocket/Websocket.ts";
-import ClientUser from "./ClientUser.ts"
-import ClientUserResolver from "../resolvers/ClientUserResolver.ts"
-import UserResolver from "../resolvers/UserResolver.ts"
+import { ClientUser } from "./ClientUser.ts"
+import { ClientUserResolver } from "../resolvers/ClientUserResolver.ts"
+import { UserResolver } from "../resolvers/UserResolver.ts"
 
 /**
  * Starting point of any bot.

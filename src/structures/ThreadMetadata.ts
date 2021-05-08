@@ -1,7 +1,7 @@
-import ThreadMetadataOptions from  "../../lib/interfaces/ThreadMetadataOptions.ts"
-import GuildUser from "./GuildUser.ts"
+import { ThreadMetadataOptions } from  "../../lib/interfaces/ThreadMetadataOptions.ts"
+import { GuildUser } from "./GuildUser.ts"
 
-export default class ThreadMetadata {
+export class ThreadMetadata {
     readonly archived: boolean
     readonly archiver: GuildUser | null
     readonly autoArchiveDuration: number

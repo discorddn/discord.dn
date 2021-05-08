@@ -1,8 +1,8 @@
-import AvatarUrlOptions from "../../lib/interfaces/AvatarURLOptions.ts"
-import UserOptions from "../../lib/interfaces/UserOptions.ts"
+import { AvatarUrlOptions } from "../../lib/interfaces/AvatarURLOptions.ts"
+import { UserOptions } from "../../lib/interfaces/UserOptions.ts"
 import { Client } from "./Client.ts"
 
-export default class User {
+export class User {
     client: Client
     id: string 
     username: string 

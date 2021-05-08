@@ -1,10 +1,10 @@
-import PresenceOptions from "../../lib/interfaces/PresenceOptions.ts"
-import GuildUser from "./GuildUser.ts"
-import Guild from "./Guild.ts"
-import PresenceStatus from "./PresenceStatus.ts"
-import Activity from "./Activity.ts"
-
-export default class Presence {
+import { PresenceOptions } from "../../lib/interfaces/PresenceOptions.ts"
+import { GuildUser } from "./GuildUser.ts"
+import { Guild } from "./Guild.ts"
+import { PresenceStatus } from "./PresenceStatus.ts"
+import { Activity } from "./Activity.ts"
+{ 
+export class Presence {
     user: GuildUser
     guild: Guild
     status: string
