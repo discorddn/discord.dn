@@ -9,7 +9,6 @@ export default class ClientUser extends User {
     }
 
     public updateName(username: string) {
-        console.log(username)
         this.client.api.patch(`/users/@me`, {
             username
         }).then(data => console.log(data))
