@@ -1,5 +1,6 @@
 import { Client } from "./Client.ts";
 import { User } from "./User.ts";
+import { ClientUserResolver } from "../resolvers/ClientUserResolver.ts";
 import { UserOptions } from "../../lib/interfaces/UserOptions.ts";
 
 export class ClientUser extends User {
@@ -7,18 +8,23 @@ export class ClientUser extends User {
     super(options, client);
   }
 
-  public updateName(username: string) {
-    this.client.api
-      .patch(`/users/@me`, {
+  public async updateName(username: string) {
+    const user = ClientUserResolver(
+      await this.client.api.patch(`/users/@me`, {
         username,
-      })
-      .then((data) => console.log(data));
+      }),
+      this.client
+    );
     this.username = username;
+    return user;
   }
 
-  public updateAvatar(avatar: string) {
-    this.client.api.patch(`/users/@me`, {
-      avatar,
-    });
+  public async updateAvatar(avatar: string) {
+    return ClientUserResolver(
+      await this.client.api.patch(`/users/@me`, {
+        avatar,
+      }),
+      this.client
+    );
   }
 }
