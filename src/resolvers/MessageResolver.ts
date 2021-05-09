@@ -1,5 +1,8 @@
-import { Message } from "../structures/Message.ts"
+import { Message } from "../structures/Message.ts";
 
-export function MessageResolver(message: object) {
-    
-}
+/**
+ * Resolver for Message.
+ *
+ * @param {Message} message
+ */
+export function MessageResolver(message: object) {}

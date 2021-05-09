@@ -1,15 +1,15 @@
-import { ChannelOverwriteOptions } from "../../lib/interfaces/ChannelOverwriteOptions.ts"
+import { ChannelOverwriteOptions } from "../../lib/interfaces/ChannelOverwriteOptions.ts";
 
 export class ChannelOverwrite {
-    readonly id: string
-    readonly type: number
-    readonly allow: string
-    readonly deny: string
+  readonly id: string;
+  readonly type: number;
+  readonly allow: string;
+  readonly deny: string;
 
-    constructor(options: ChannelOverwriteOptions) {
-        this.id = options.id
-        this.type = options.type
-        this.allow = options.allow
-        this.deny = options.deny
-    }
+  constructor(options: ChannelOverwriteOptions) {
+    this.id = options.id;
+    this.type = options.type;
+    this.allow = options.allow;
+    this.deny = options.deny;
+  }
 }

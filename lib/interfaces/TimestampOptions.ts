@@ -1,4 +1,7 @@
+/**
+ * Interface for TimestampOptions.
+ */
 export interface TimestampOptions {
-    start?: number
-    end?: number
+  start?: number;
+  end?: number;
 }

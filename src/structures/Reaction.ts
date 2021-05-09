@@ -1,3 +1,1 @@
-export class Reaction {
-    
-}
+export class Reaction {}

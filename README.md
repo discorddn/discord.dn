@@ -17,12 +17,12 @@
   
 </div>
 
-> *A Deno Library to interact with the Discord API*
+> _A Deno Library to interact with the Discord API_
 
 ## How to import
 
 ```ts
-import { Client } from 'https://deno.land/x/discorddn/mod.ts';
+import { Client } from "https://deno.land/x/discorddn/mod.ts";
 ```
 
 ## Contributors ✨

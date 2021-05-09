@@ -1,5 +1,8 @@
+/**
+ * Interface for SecretsOptions.
+ */
 export interface SecretsOptions {
-    join?: string
-    spectate?: string
-    match?: string
+  join?: string;
+  spectate?: string;
+  match?: string;
 }
