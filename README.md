@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/github/license/discorddn/discord.dn?style=for-the-badge">
   </a>
   <a href="https://deno.land/x/discorddn">
-    <img src="https://img.shields.io/badge/deno.land%2Fx-v0.0.1-9cf?style=for-the-badge">
+    <img src="https://img.shields.io/github/v/release/discorddn/discord.dn?include_prereleases&label=deno.land%2Fx&style=for-the-badge">
   </a>
   <a href="https://discorddn.mod.land/discord">
     <img src="https://img.shields.io/discord/783631897242238996?style=for-the-badge&labelColor=23272A&color=7289DA">
