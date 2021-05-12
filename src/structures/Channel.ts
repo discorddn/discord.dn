@@ -14,27 +14,27 @@ export class Channel {
   client: Client;
   id: string;
   type: number;
-  guild: Guild | null;
-  position: number | null;
-  permissionOverwrites: Array<ChannelOverwrite> | null;
-  name: string | null;
-  topic: string | null;
-  nsfw: boolean | null;
-  lastMessage: Message | null;
-  bitrate: number | null;
-  userLimit: number | null;
-  cooldown: number | null;
-  recipient: Array<User> | null;
-  icon: string | null;
-  owner: User | null;
-  parentId: string | null;
-  lastPinTimestamp: string | null;
-  rtcRegion: string | null;
-  videoQualityMode: number | null;
-  threadMessageCount: number | null;
-  threadMemberCount: number | null;
-  threadMetadata: ThreadMetadata | null;
-  threadMember: ThreadMember | null;
+  guild?: Guild;
+  position?: number;
+  permissionOverwrites?: Array<ChannelOverwrite>;
+  name?: string;
+  topic?: string;
+  nsfw?: boolean;
+  lastMessage?: Message;
+  bitrate?: number;
+  userLimit?: number;
+  cooldown?: number;
+  recipient?: Array<User>;
+  icon?: string;
+  owner?: User;
+  parentId?: string;
+  lastPinTimestamp?: string;
+  rtcRegion?: string;
+  videoQualityMode?: number;
+  threadMessageCount?: number;
+  threadMemberCount?: number;
+  threadMetadata?: ThreadMetadata;
+  threadMember?: ThreadMember;
 
   constructor(options: ChannelOptions, client: Client) {
     /**
@@ -59,127 +59,127 @@ export class Channel {
      * The Guild to which the Channel belongs to.
      * @type {Guild | null}
      */
-    this.guild = options.guild || null;
+    this.guild = options.guild;
 
     /**
      * The Position of the Channel.
      * @type {number | null}
      */
-    this.position = options.position || null;
+    this.position = options.position;
 
     /**
      * [TBD]
      * @type {Array<ChannelOverwrite> | null}
      */
-    this.permissionOverwrites = options.permissionOverwrites || null;
+    this.permissionOverwrites = options.permissionOverwrites;
 
     /**
      * The name of a Channel.
      * @type {string | null}
      */
-    this.name = options.name || null;
+    this.name = options.name;
 
     /**
      * The topic of a Channel.
      * @type {string | null}
      */
-    this.topic = options.topic || null;
+    this.topic = options.topic;
 
     /**
      * If the Channel is considered NSFW.
      * @type {boolean | null}
      */
-    this.nsfw = options.nsfw || null;
+    this.nsfw = options.nsfw;
 
     /**
      * The last Message in a Channel.
      * @type {Message | null}
      */
-    this.lastMessage = options.lastMessage || null;
+    this.lastMessage = options.lastMessage;
 
     /**
      * The Bitrate of a Voice Channel.
      * @type {number | null}
      */
-    this.bitrate = options.bitrate || null;
+    this.bitrate = options.bitrate;
 
     /**
      * The maximum amount of users allowed in a Voice Channel.
      * @type {number | null}
      */
-    this.userLimit = options.userLimit || null;
+    this.userLimit = options.userLimit;
 
     /**
      * The ratelimit at which a user can send messages in a Channel.
      * @type {number | null}
      */
-    this.cooldown = options.cooldown || null;
+    this.cooldown = options.cooldown;
 
     /**
      * [TBD]
      * @type {Array<User> | null}
      */
-    this.recipient = options.recipient || null;
+    this.recipient = options.recipient;
 
     /**
      * [TBD]
      * @type {string | null}
      */
-    this.icon = options.icon || null;
+    this.icon = options.icon;
 
     /**
      * [TBD]
      * @type {User | null}
      */
-    this.owner = options.owner || null;
+    this.owner = options.owner;
 
     /**
      * The ID of the Parent Channel.
      * @type {string | null}
      */
-    this.parentId = options.parentId || null;
+    this.parentId = options.parentId;
 
     /**
      * The Timestamp of the last pin in a Channel.
      * @type {string | null}
      */
-    this.lastPinTimestamp = options.lastPinTimestamp || null;
+    this.lastPinTimestamp = options.lastPinTimestamp;
 
     /**
      * The RTC Region of a Voice Channel.
      * @type {string | null}
      */
-    this.rtcRegion = options.rtcRegion || null;
+    this.rtcRegion = options.rtcRegion;
 
     /**
      * The Video Quality Mode of a Voice Channel.
      * @type {number | null}
      */
-    this.videoQualityMode = options.videoQualityMode || null;
+    this.videoQualityMode = options.videoQualityMode;
 
     /**
      * [TBD]
      * @type {number | null}
      */
-    this.threadMessageCount = options.threadMessageCount || null;
+    this.threadMessageCount = options.threadMessageCount;
 
     /**
      * [TBD]
      * @type {number | null}
      */
-    this.threadMemberCount = options.threadMemberCount || null;
+    this.threadMemberCount = options.threadMemberCount;
 
     /**
      * [TBD]
      * @type {ThreadMember | null}
      */
-    this.threadMetadata = options.threadMetadata || null;
+    this.threadMetadata = options.threadMetadata;
 
     /**
      * [TBD]
      * @type {ThreadMember | null}
      */
-    this.threadMember = options.threadMember || null;
+    this.threadMember = options.threadMember;
   }
 
   /**
@@ -280,6 +280,18 @@ export class Channel {
   }
 
   /**
+   * Sets parent category for channel.
+   * @param {string} id
+   */
+  public setCategory(id: string) {
+    this.client.api.patch(`/channels/${this.id}`, {
+      parent_id: id
+    });
+    this.parentId = id 
+    return this;
+  }
+
+  /**
    * Sends a Message to a Channel.
    * @param {string} content
    */
@@ -297,6 +309,7 @@ export class Channel {
    */
   public triggerTyping() {
     this.client.api.post(`/channels/${this.id}/typing`, {});
+    return this;
   }
 
   /**
