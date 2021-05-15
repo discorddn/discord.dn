@@ -54,6 +54,10 @@ export class User {
     return new Date(this.createdAt);
   }
 
+  public get mention() {
+    return `<@!${this.id}>`
+  }
+
   public async openDM() {
     return await this.client.api.post("/users/@me/channels", {
       recipient_id: this.id,
