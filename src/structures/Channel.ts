@@ -6,6 +6,7 @@ import { User } from "./User.ts";
 import { ThreadMetadata } from "./ThreadMetadata.ts";
 import { ThreadMember } from "./ThreadMember.ts";
 import { Client } from "./Client.ts";
+import { Embed } from "./Embed.ts";
 
 /**
  * The Class for any Discord Channel.
@@ -285,21 +286,24 @@ export class Channel {
    */
   public setCategory(id: string) {
     this.client.api.patch(`/channels/${this.id}`, {
-      parent_id: id
+      parent_id: id,
     });
-    this.parentId = id 
+    this.parentId = id;
     return this;
   }
 
   /**
    * Sends a Message to a Channel.
    * @param {string} content
+   * @param {Embed} embed
    */
-  public send(content: string) {
-    if (content == "") throw Error("Content can't be blank");
-    this.client.api.post(`/channels/${this.id}/messages`, {
-      content,
-    });
+  public send(content?: string | Embed) {
+    if (typeof content === "string" && content == "")
+      throw Error("send(): Can't send an empty message");
+    this.client.api.post(
+      `/channels/${this.id}/messages`,
+      typeof content === "string" ? { content } : { embed: content?.toJSON() }
+    );
     // i need to change this to return a message object but i need resolvers for that and im too lazy to make rn so yeahhhhhh
     return this;
   }

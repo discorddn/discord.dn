@@ -4,13 +4,7 @@ export interface Embed {
     description?: string;
     url?: string;
     timestamp?: string;
-    color: string;
-    footer?: EmbedFooter;
-    image?: EmbedImage;
-    thumbnail?: EmbedThumbnail;
-    video?: EmbedVideo;
-    provider?: EmbedProvider;
-    author?: EmbedAuthor;
+    color?: string;
 };
 
 export interface EmbedFooter {
