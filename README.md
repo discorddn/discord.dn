@@ -1,3 +1,5 @@
+dead project lol
+
 <div align="center">
   <img src="discord.dn.png" height="150" width="150">
   <h1>Discord.DN</h1>
